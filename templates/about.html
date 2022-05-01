@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>LPG About</title>
+
+  <!-- Bootstrap core CSS -->
+  <!-- Bootstrap core CSS -->
+  <link href="{{url_for('static', filename='bootstrap.min.css')}}" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="{{url_for('static', filename='font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="{{url_for('static', filename='clean-blog.min.css')}}" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="{{url_for('index')}}">Welcome</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('index')}}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('about')}}">About</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('dealer') }}">Dealer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('consumer') }}">Consumer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('predict') }}">Predict</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('{{url_for('static', filename='cylinder.jpg')}}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>Report on LPG</h1>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <p>Looking after the consumer dataset we observed that the recorded entries were only for one week’s timestamp. It was difficult to use such data set for future forecasting as the data was recorded per second so we used this data only for analysis purpose and moved ahead for future prediction using the monthly data. </p>
+
+        <p>The monthly data were recorded for each day. To get a fair idea about what the data tells us we decomposed it using Time Series Techniques, namely trend, seasonality and residual charts. We noticed that the data has a white noise present which implies high residuals and randomness. Therefore, no seasonality and trend.</p>
+
+
+        <p>As there was too much randomness in the data we opted for neural networks.  In Neural Network we used Long short-term memory (LSTM), which is an artificial recurrent neural network (RNN) architecture used in the field of deep learning which is capable of learning long dependencies (previous data).Using LSTM we tried to create a time series model which was able to learn the pattern and accordingly predict the LPG usage consumption values. </p>
+
+        <p>The alternate model used was SARIMA, which is one of the most used techniques in time series forecasting. SARIMA is the model which is capable of capturing trend and seasonality. We used LSTM to evaluate the working of SARIMA. Further, we took a cumulative of all the days for each month and monthly usage data and we predicted the future demand for 5 months.</p>
+
+        <p>Data science is a multi-disciplinary field that uses scientific methods, processes, algorithms and systems to extract knowledge and insights from structured and unstructured data.Data science is the same concept as data mining and big data: "use the most powerful hardware, the most powerful programming systems, and the most efficient algorithms to solve problems"</p>
+            
+        <p> Technologies Used :<br>
+                 1. Data Preprocessing<br>
+                 2. Time Series Analysis<br>
+                 3. Neural Networks <br>
+        </p>            
+
+
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+      
+        <p class="copyright text-muted">Copyright &copy; Qualetics</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{{url_for('static', filename='jquery.min.css')}}"></script>
+  <script src="{{url_for('static', filename='bootstrap.bundle.min.css')}}"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="{{url_for('static', filename='clean-blog.min.css')}}"></script>
+
+</body>
+
+</html>
